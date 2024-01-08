@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laziz catering</title>
+    <link rel="icon" href="laziz img/lo.jpg" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="laziz img/lo.jpg">
+    <link rel="icon" type="image/png" sizes="32x32" href="laziz img/lo.jpg">
+    <link rel="icon" type="image/png" sizes="16x16" href="laziz img/lo.jpg">
+
+    <link rel="stylesheet" href="laziz.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      
+      .food-image {
+    position: absolute;
+    top: 0;
+    left: 80%;
+    max-width: 15%; /* Adjust the width as needed */
+    height: auto;
+    margin-top: 20px;
+     }
+      form {
+        max-width: 70%;
+        margin: 0 auto;
+      }
+      label {
+        display: block;
+        margin-top: 10px;
+      }
+      input, textarea {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+      }
+      button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #45a049;
+      }
+      
+    
+      .food-imag {
+      max-width: 100%;
+      height: auto;
+      margin-top: 20px;
+      }
+
+    </style>
+
+</head>
+<body class="about">
+  <nav class="navbar navbar-expand-lg nav-bg fixed-top nav nav-masthead justify-content-center float-md-end ">
+    <div class="container-fluid">
+      <a class="nav-link link-light e fs-5" href="index.html">HOME</a>
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link link-light fs-5  " href="about.html" rel="about">ABOUT US</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link link-light fs-5 active " href=""  aria-current="page" tabindex="-1" aria-disabled="true">CONTACT US</a>
+        </li>
+      </ul>   
+    </div>
+
+
+
+    </div>
+  </nav>
+  <div class=" container-fluid bg-dark text-light p-5" >
+   <div class="container">
+    <img class="food-image " src="laziz img/new_cover-removebg-preview.png" alt="Food 2">
+
+   </div>     
+  <form id="submit-form"  action="" method="post">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="phone">Phone:</label>
+    <input type="tel" id="phone" name="phone">
+
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" rows="4" required></textarea>
+
+    <p id="deployment-link"></p>
+
+    <button type="submit">Submit</button>
+    <script>
+        $("#submit-form").submit((e) => {
+            e.preventDefault();
+            $.ajax({
+                url: "https://script.google.com/macros/s/AKfycbyHXWIc3zyXSNjsCnRgPoGs2lkXqwUG8M9KYHHuJ6KVxvDaBVjTu42JO-87a5B4O432/exec",
+                data: $("#submit-form").serialize(),
+                method: "post",
+                success: function (response) {
+                    // Parse the response to get the deployment link
+                    const deploymentLink = JSON.parse(response).deploymentLink;
+
+                    // Display the deployment link on the page
+                    $("#deployment-link").text("Deployment Link: " + deploymentLink);
+
+                    // Optionally, you can clear the form or do other actions
+                    alert("Form submitted successfully");
+                    window.location.reload();
+                },
+                error: function (err) {
+                    alert("Something Error");
+                }
+            });
+        });
+    </script>
+  </form>
+
+  <!-- Food Images -->
+  <img class="food-imag" src="laziz img/photo-plate-delicious-tasty-food_839182-4623.avif" alt="Food 1">
+  <!-- <img class="food-image" src="laziz img/new_cover-removebg-preview.png" alt="Food 2"> -->
+
+</div>
+
+
+
+
+
+        
+
+    
+         <!-- Footer -->
+<footer class="text-center text-lg-start bg-white text-muted">
+  <!-- Section: Social media -->
+  <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+    <!-- Left -->
+    <div class="me-5 d-none d-lg-block">
+      <span>Get connected with us on social networks:</span>
+    </div>
+    <!-- Left -->
+
+    <!-- Right -->
+    <div>
+      <a href="" class="me-4 link-secondary">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="" class="me-4 link-secondary">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="" class="me-4 link-secondary">
+        <i class="fab fa-google"></i>
+      </a>
+      <a href="" class="me-4 link-secondary">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="" class="me-4 link-secondary">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="" class="me-4 link-secondary">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <!-- Right -->
+  </section>
+  <!-- Section: Social media -->
+
+  <!-- Section: Links  -->
+  <section class="">
+    <div class="container text-center text-md-start mt-5">
+      <!-- Grid row -->
+      <div class="row mt-3">
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          <!-- Content -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            <i class="fas fa-gem me-3 text-secondary"></i>LAZIZ CATERING
+          </h6>
+          <p>
+            Making your guest more delighted with our food.
+            The catering with the royal touch.The fine dining catering
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            QUICK LINKS
+
+          </h6>
+          <p>
+            <a href="#!" class="text-reset">HOME</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">ABOUT US</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">EVENTS MENU</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">SERVICES</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Useful links
+          </h6>
+          <p>
+            <a href="#!" class="text-reset">CLIENTS</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">ENQUIRY</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">CONTACT US</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+          <p><i class="fas fa-home me-3 text-secondary"></i> DUBAI, DIP, UAE</p>
+          
+          <p><i class="fas fa-print me-3 text-secondary"></i> + 971525133648</p>
+        </div>
+        <!-- Grid column -->
+      </div>
+      <!-- Grid row -->
+    </div>
+  </section>
+  <!-- Section: Links  -->
+</footer>
+<!-- Footer --> -->
+<!-- Footer -->
+          <footer class="text-center text-white  container-fluid" style="background-color: #21081a;">
+            <!-- Grid container -->
+            <div class="container p-4 d-flex justify-content-between">
+              <div class="container">
+                <i class="fa-sharp fa-solid fa-phone ft"></i>
+                <p class="text-light">+9710564149648</p>
+  
+              </div>
+  
+              <div class="container">
+                <i class="fa-regular fa-envelope ft"></i><br>
+                <a class="text-light mail" href="">lazizcatering@gmail.com </a>
+  
+              </div>
+              <div class="container">
+                <i class="fa-brands fa-instagram ft"></i>
+                <i class="fa-brands fa-facebook ft"></i>
+                <i class="fa-brands fa-youtube ft"></i>
+                <p class="text-light">FOLLOW US</p>
+  
+              </div>
+              
+  
+  
+            </div>
+            <!-- Grid container -->
+          
+            <!-- Copyright -->
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+              © 2023 Copyright:
+              <a class="text-white name" href="https://mdbootstrap.com/">LAZIZ CATERING</a>
+            </div>
+            <!-- Copyright -->
+          </footer>
+
+          
+        
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+ <script src="laziz.js"></script> 
+</body>
+</html
